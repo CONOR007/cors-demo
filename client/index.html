@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.21.0/dist/axios.js"></script>
+  <script>
+    axios({
+      method: 'POST',
+      url: 'http://localhost:3000/posts',
+      data: { // 请求体，axios 默认发送的就是 application/json 格式数据
+        foo: 'bar'
+      },
+      headers: {
+        // 我们经常通过 headers 给服务端发送 token 数据
+        Authorization: 'dsajdsa'
+      }
+    }).then(res => {
+      console.log(res)
+    })
+
+    // axios({
+    //   method: 'GET',
+    //   url: 'http://localhost:3000/posts'
+    // }).then(res => {
+    //   console.log(res)
+    // })
+  </script>
+</body>
+</html>
